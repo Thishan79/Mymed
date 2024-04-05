@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles001.css">
+  <link rel="stylesheet" href="styles002.css">
+  <script src="scripts001.js"></script>
+  <script src="scripts002.js"></script>
+</head>
+<body onload="displayTariffTable()">
+  <h1 class="mainHeading">Electricity Bill Calculator</h1>
+  <h1 class="mainHeading">විදුලි බිල ගණනය කිරීම</h1>
+
+  <div class="bothDivs .flex-container"> <!-- both divs are included in a Flex -->
+    <div class="tariffTable tooltip">
+      <span class="tooltiptext">Click to edit Tariff Table</span>
+      <p style="font-size: 125%; color: aliceblue; background-color:darkgreen;">
+        Current Tariff Table</p>
+      Effective from 2023-10-20 <br>
+      (Tax Included, Fuel Adjustment not included)
+      <br>
+      <table id="myTable1">
+        <tr>  <th>Unit Break </th>      <th>Tariff</th>      <th>Fixed Charge</th>  </tr>
+        <tr>  <td></td>     <td></td>     <td>--</td>    </tr>
+        <!--  <tr>  <td></td>     <td></td>     <td>--</td>    </tr>
+        <tr>  <td></td>     <td></td>     <td>--</td>    </tr>
+        <tr>  <td></td>     <td></td>     <td>--</td>    </tr>
+        <tr>  <td></td>     <td></td>     <td>--</td>    </tr>  -->
+      </table>
+      <br>
+      <button id="editTable"  onclick="editTariffTable()">Edit Table Data</button>
+    </div>
+    <br>
+    <div class="tariffCalc tooltip"> 
+      <span class="tooltiptext">Calculation</span>
+      <h3>Please Enter Your Electricity Consumption for 30 days</h3>
+      <input type="number" id="myNumber" value="200" min="1">
+      <button id="calc1" onclick="calculateTariff()">Calculate</button>
+      <p id="demo">Your Bill</p>
+      <button id="reset1"  onclick="resetTariffCalc()">Reset</button>
+    </div>
+  </div>
+  
+  <br><br>
+
+  <div>
+    <a id="Page02" style="font-size: 150%; color: brown;" href="MyHtml001.html"> ජල බිල ගනනය කිරීම </a> 
+    <a id="Page03" style="font-size: 150%; color: red;" href="MyHtml002.html"> Stamp Dispencing Machine </a>
+    <a id="Page03" style="font-size: 150%; color: rgb(117, 0, 251);" 
+      href="https://ij.manual.canon/ij/webmanual/Manual/All/G3010%20series/EN/NTR/ntr_t_07_01_c.html"> Cannon 3010 Errors </a> 
+    <br> <br>
+
+    <button id="StoreData"  onclick="StoreData()">Store to LocalStorage .json </button>
+    <button id="GetData"  onclick="GetData()">Get Table Data</button>
+
+    <p id="testData">Display Test Data</p>
+  </div>
+
+
+</body>
+</html>
